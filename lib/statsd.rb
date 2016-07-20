@@ -467,7 +467,7 @@ class Statsd
       # Replace Ruby module scoping with '.' and reserved chars (: | @) with underscores.
       stat = stat.to_s.gsub('::', delimiter).tr(':|@', '_')
       rate = "|@#{sample_rate}" unless sample_rate == 1
-      send_to_socket "#{prefix}#{stat}#{postfix}:#{delta}|#{type}#{rate}"
+      send_to_socket "#{prefix}#{stat}#{postfix}:#{delta}|#{type}#{rate}\n"
     end
   end
 
