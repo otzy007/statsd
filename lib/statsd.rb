@@ -433,6 +433,12 @@ class Statsd
     end
   end
 
+  def close
+    @socket.close
+  end
+
+  alias_method :disconnect, :close
+
   protected
 
   def send_to_socket(message)
