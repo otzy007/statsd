@@ -434,7 +434,7 @@ class Statsd
   end
 
   def close
-    @socket.close
+    socket.close
   end
 
   alias_method :disconnect, :close
